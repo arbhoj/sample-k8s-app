@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: welcomeglobal
+spec:
+  template:
+    spec:
+      containers:
+      - name: nginx
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html/ship.html
+          name: localmainpage
+          subPath: ship.html
+      volumes:
+      - name: localmainpage
+        configMap:
+          name: localmainpage

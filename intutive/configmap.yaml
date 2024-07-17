@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: localmainpage
+data:
+  ship.html: |
+    <html>
+        <body>
+            <h1>!!!INTUITIVE da Vinci!!!</h1>
+            <p><a href="index.html">Back to Main Page</a></p>
+            <img src="https://s.wsj.net/public/resources/images/MW-BY025_intuit_MP_20140401105340.jpg">
+        </body>
+    </html>

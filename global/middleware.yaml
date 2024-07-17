@@ -2,7 +2,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
   name: welcomeglobal-stripprefixes
-  namespace: default
+  namespace: kommander-flux
 spec:
   stripPrefix:
     prefixes:
