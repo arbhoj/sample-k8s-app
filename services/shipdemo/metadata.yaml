@@ -6,6 +6,14 @@ type: catalog
 scope:
   - workspace
 allowMultipleInstances: false
+licensing:
+  - Pro
+  - Ultimate
+  - Essential
+  - Enterprise
+certifications:
+  - qualified
+  - airgapped
 overview: |-
   # Overview
   shipdemo Overview
