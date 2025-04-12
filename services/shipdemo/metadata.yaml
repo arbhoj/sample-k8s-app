@@ -1,0 +1,13 @@
+displayName:
+description: shipdemo Description
+category:
+  - Custom
+type: catalog
+scope:
+  - workspace
+allowMultipleInstances: false
+overview: |-
+  # Overview
+  shipdemo Overview
+# Base64 encoded svg format icon
+icon: 

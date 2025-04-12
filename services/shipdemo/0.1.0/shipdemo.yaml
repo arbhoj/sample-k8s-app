@@ -1,0 +1,39 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: shipdemo
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: shipdemo
+      sourceRef:
+        kind: HelmRepository
+        name: shipdemo
+        namespace: ${releaseNamespace} 
+      version: 0.1.0
+  interval: 15s
+  install:
+    remediation:
+      retries: 30
+    createNamespace: false
+  upgrade:
+    remediation:
+      retries: 30
+  releaseName: shipdemo
+  valuesFrom:
+    - kind: ConfigMap
+      name: shipdemo-0.1.0-defaults
+  targetNamespace: ${releaseNamespace}
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: shipdemo
+  namespace: ${releaseNamespace}
+spec:
+  interval: 10m
+  timeout: 1m
+  url: "${helmMirrorURL:=https://raw.githubusercontent.com/arbhoj/sample-k8s-app/master/shipdemo-charts}"

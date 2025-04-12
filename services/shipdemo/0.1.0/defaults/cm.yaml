@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shipdemo-0.1.0-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |-
+    some: value 
