@@ -5,7 +5,7 @@ metadata:
   namespace: default
   annotations:
     kubernetes.io/ingress.class: kommander-traefik
-    traefik.ingress.kubernetes.io/router.middlewares: "kommander-flux-welcomeglobal-stripprefixes@kubernetescrd"
+    traefik.ingress.kubernetes.io/router.middlewares: "${middleware}"
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
