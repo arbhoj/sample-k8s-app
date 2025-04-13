@@ -37,3 +37,19 @@ spec:
   interval: 10m
   timeout: 1m
   url: "${helmMirrorURL:=https://raw.githubusercontent.com/arbhoj/sample-k8s-app/master/shipdemo-charts}"
+---
+apiVersion: v1
+data:
+  dashboardLink: /welcomeglobal/
+  docsLink: https://github.com/arbhoj/sample-k8s-app
+  name: Ship Homepage
+  category: Gitops
+  description: This is the Ship Homepage
+  appTypeDisplayName: APP_TYPE_DISPLAY_NAMES.PLATFORM,
+  version: 0.1.0
+kind: ConfigMap
+metadata:
+  labels:
+    kommander.d2iq.io/application: shipdemo
+  name: shipdemo-dashboard-info
+  namespace: ${releaseNamespace}
