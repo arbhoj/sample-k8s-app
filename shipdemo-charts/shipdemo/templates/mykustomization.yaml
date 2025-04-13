@@ -2,47 +2,47 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
   name: shipwelcome
-  namespace: ${NAMESPACE}
+  namespace: ${releaseNamespace}
 spec:
   patches:
    - patch: |
        - op: replace
          path: /metadata/namespace
-         value: ${NAMESPACE}
+         value: ${releaseNamespace}
      target:
        kind: Deployment
    - patch: |
        - op: replace
          path: /metadata/namespace
-         value: ${NAMESPACE}
+         value: ${releaseNamespace}
      target:
        kind: Service
    - patch: |
        - op: replace
          path: /metadata/namespace
-         value: ${NAMESPACE}
+         value: ${releaseNamespace}
      target:
        kind: ConfigMap
    - patch: |
        - op: replace
          path: /metadata/namespace
-         value: ${NAMESPACE}
+         value: ${releaseNamespace}
      target:
        kind: Ingress
    - patch: |
        - op: replace
          path: /metadata/namespace
-         value: ${NAMESPACE}
+         value: ${releaseNamespace}
      target:
        kind: Middleware
   postBuild:
     substitute:
-      middleware: ${NAMESPACE}-welcomeglobal-stripprefixes@kubernetescrd      
+      middleware: ${releaseNamespace}-welcomeglobal-stripprefixes@kubernetescrd      
   interval: 5s
   path: ./ships/{{ .Values.shipname }}
   prune: true
-  serviceAccountName: ${NAMESPACE}
+  serviceAccountName: ${releaseNamespace}
   sourceRef:
    kind: GitRepository
    name: demo-repo-ship
-   namespace: ${NAMESPACE}
+   namespace: ${releaseNamespace}
