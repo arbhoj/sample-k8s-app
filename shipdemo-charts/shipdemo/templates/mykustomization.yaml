@@ -41,7 +41,6 @@ spec:
   interval: 5s
   path: ./ships/{{ .Values.shipname }}
   prune: true
-  serviceAccountName: {{ .Release.Namespace }}
   sourceRef:
    kind: GitRepository
    name: demo-repo-ship

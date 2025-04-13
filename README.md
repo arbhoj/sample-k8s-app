@@ -75,7 +75,6 @@ spec:
   interval: 5s
   path: ./ships/allure
   prune: true
-  serviceAccountName: ${NAMESPACE}
   sourceRef:
    kind: GitRepository
    name: demo-repo-ship
