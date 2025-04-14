@@ -39,7 +39,7 @@ spec:
     substitute:
       middleware: {{ .Release.Namespace }}-welcomeglobal-stripprefixes@kubernetescrd      
   interval: 5s
-  path: ./ships/{{ .Values.shipname }}
+  path: ./ships/{{ include "dynamic.clusterName" . }}
   prune: true
   sourceRef:
    kind: GitRepository

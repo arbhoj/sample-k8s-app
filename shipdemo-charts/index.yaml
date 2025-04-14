@@ -3,12 +3,12 @@ entries:
   shipdemo:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-04-13T14:18:40.071194-04:00"
+    created: "2025-04-13T22:50:17.710282-04:00"
     description: A Helm chart for Kubernetes
-    digest: d817c9da73d5ed0e49367dc5daac00d6f5f09849f4487e8c0ff19a6df7362871
+    digest: 21b2a4002746951da1f6effa18f628db4adf842a6b0043e3cb572c3758933476
     name: shipdemo
     type: application
     urls:
     - https://raw.githubusercontent.com/arbhoj/sample-k8s-app/master/shipdemo-charts/shipdemo-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-13T14:18:40.070188-04:00"
+generated: "2025-04-13T22:50:17.709913-04:00"
